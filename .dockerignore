@@ -1,0 +1,5 @@
+**
+!requirements.txt
+!requirements-desktop-build.txt
+!deploy/
+!deploy/Dockerfile.linux-build

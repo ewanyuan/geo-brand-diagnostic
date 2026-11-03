@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>平台登录中心</title>
+  <link rel="stylesheet" href="/static/login.css">
+  <script defer src="/static/guest-access.js"></script>
+</head>
+<body>
+  <header><span class="brand">G° <span>平台登录中心</span></span></header>
+  <main class="entrance">
+    <div class="heading"><div><h1>把你的账号接给 GEO</h1><p>填个称呼，选平台登录，完成后交给 GEO 提问和获取回答。</p></div></div>
+    <form id="start-form" class="start-card">
+      <label for="participant-name">怎么称呼你</label>
+      <input id="participant-name" name="name" type="text" maxlength="40" autocomplete="off" placeholder="例如：小王" required autofocus>
+      <button type="submit" class="primary" id="start-button">开始登录 →</button>
+      <p id="access-message" role="status">每个人的登录页面各自保存；同名也不会共用账号。</p>
+    </form>
+    <ol class="entry-steps"><li>填个称呼</li><li>点平台，用自己的账号登录</li><li>点「完成，交给 GEO」</li></ol>
+    <p class="privacy">平台会话保存在服务器，由 GEO 运营者管理。当前 DeepSeek、豆包、Kimi 可用于网页采集，其余三个平台可先登录保存。在同一浏览器里刷新或重开网址可继续本次操作；换电脑或退出后需重新登录。</p>
+  </main>
+</body>
+</html>

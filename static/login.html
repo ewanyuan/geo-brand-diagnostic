@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="login-token" content="__LOGIN_TOKEN__">
+  <script type="application/json" id="platform-catalog">__LOGIN_SITES__</script>
+  <script type="application/json" id="portal-config">__LOGIN_CONFIG__</script>
+  <title>平台登录中心 · GEO 诊断台</title>
+  <link rel="stylesheet" href="/static/login.css">
+  <script defer src="/static/login.js"></script>
+</head>
+<body>
+  <header><a class="brand" id="portal-brand" href="/">G° <span>GEO 诊断台</span></a><a id="portal-home" href="/">返回诊断台 ↗</a><button id="logout" hidden>退出此入口</button></header>
+  <main>
+    <section id="collection-consent" class="consent" hidden>
+      <div><strong id="collection-consent-title">GEO 使用权限</strong><p id="collection-consent-note"></p></div>
+      <button id="collection-consent-toggle"></button>
+    </section>
+    <div class="heading"><div><small>PLATFORM ACCESS</small><h1>把登录集中在一次完成</h1><p id="portal-description">六个平台共用一个专用浏览器工作区。页面独立保持，刷新诊断台后可以接着操作。</p></div><span id="portal-location" class="local">仅本机可访问</span></div>
+    <section class="setup">
+      <div><strong id="setup-title">准备页面 → 逐个平台登录 → 保存会话</strong><p id="setup-description">准备完成后选平台，在下方实际网页中操作。二维码失效时刷新该平台；短信在你点击网页按钮时才发送。</p></div>
+      <div class="buttons"><button id="prepare" class="primary">准备全部登录页</button><button id="status">刷新状态</button><button id="finish">保存并结束登录</button></div>
+    </section>
+    <div id="notice" role="status">正在连接专用浏览器…</div>
+    <section id="platforms" class="platforms" aria-label="平台列表"></section>
+    <section class="workspace" id="login-workspace">
+      <div class="workspace-head"><div><small>当前平台</small><h2 id="platform-title">请选择平台</h2><p id="page-note">各平台的登录状态分别保留。</p></div><div class="buttons"><button id="retry">重试准备此页</button><button id="snapshot">刷新画面</button><button id="reload">刷新登录页</button><button id="confirmed">我已完成此平台登录</button></div></div>
+      <div class="screen-wrap" id="screen-wrap"><div id="placeholder">准备页面后，在上方选择一个平台。</div><img id="screen" alt="平台实际登录页面" hidden></div>
+      <div class="controls">
+        <div class="focus" id="focus">先点击画面中的输入框</div>
+        <form id="type-form"><label class="sr-only" for="entry">输入到选中的网页输入框</label><input id="entry" type="password" autocomplete="off" placeholder="在这里输入手机号、验证码或密码" maxlength="300" disabled><button id="type-submit" class="primary" disabled>填入网页</button></form>
+        <div class="buttons key-buttons"><button data-key="SELECT_ALL">全选框内文字</button><button data-key="BACKSPACE">删除</button><button data-key="TAB">下一个输入框</button><button data-key="ENTER">网页回车</button><button data-scroll="-500">向上滚动</button><button data-scroll="500">向下滚动</button></div>
+        <p class="privacy" id="portal-privacy">输入内容填入后立即从本地输入框清空，不写入诊断记录。登录会话保存在专用浏览器目录。若网页出现人工验证，请按网页要求完成。</p>
+      </div>
+    </section>
+    <footer id="portal-footer">“我已完成”由你确认；采集是否可用会在取得真实回答时核验。DeepSeek、豆包、Kimi 已有采集入口，其余三个平台先准备登录页。</footer>
+  </main>
+</body>
+</html>

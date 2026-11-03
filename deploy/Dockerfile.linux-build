@@ -1,0 +1,12 @@
+# Default is a small Python distribution; a locally cached Debian Python image
+# may be supplied with --build-arg GEO_BUILD_BASE=... without touching the host.
+ARG GEO_BUILD_BASE=python:3.12-slim-bookworm
+FROM ${GEO_BUILD_BASE}
+USER root
+RUN python3 -m venv /opt/geo-build
+ENV PATH="/opt/geo-build/bin:${PATH}"
+COPY requirements.txt requirements-desktop-build.txt /tmp/geo-requirements/
+RUN python -m pip install --no-cache-dir -r /tmp/geo-requirements/requirements-desktop-build.txt
+RUN apt-get update && apt-get install -y --no-install-recommends binutils chromium fonts-noto-cjk xvfb && rm -rf /var/lib/apt/lists/*
+WORKDIR /workspace
+ENTRYPOINT ["python"]

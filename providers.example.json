@@ -1,0 +1,7 @@
+{
+  "自有模型接口": {
+    "url": "https://YOUR_PROVIDER.example/v1/chat/completions",
+    "model": "YOUR_MODEL_NAME",
+    "key_env": "GEO_PROVIDER_API_KEY"
+  }
+}

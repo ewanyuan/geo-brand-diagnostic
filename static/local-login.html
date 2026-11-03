@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="login-token" content="__LOGIN_TOKEN__">
+  <title>本机浏览器 · GEO 诊断台</title>
+  <link rel="stylesheet" href="/static/login.css">
+  <script defer src="/static/local-login.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="/">G° <span>GEO 诊断台</span></a><a href="/">返回诊断台 ↗</a></header>
+  <main>
+    <div class="heading"><div><small>LOCAL BROWSER</small><h1>用本机浏览器登录，直接开始诊断</h1><p>点击平台后会打开真实的 Chrome 或 Edge 窗口。在官网正常输入、扫码或完成验证，再回 GEO 选择问题采集。</p></div><span class="local">账号只留在这台电脑</span></div>
+    <section class="setup"><div><strong>打开平台 → 在浏览器登录 → 回诊断台采集</strong><p>不需要交接或关闭浏览器。GEO 提问期间请暂时不要操作对应的聊天页，以免影响本次采集。</p></div><div class="buttons"><button id="refresh">刷新状态</button><button id="finish">关闭专用浏览器</button></div></section>
+    <div id="notice" role="status">正在读取本机浏览器状态…</div>
+    <section id="platforms" class="platforms" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))" aria-label="可采集平台"></section>
+    <section class="workspace"><div class="workspace-head"><div><h2>登录后，到「录入监测」选择问题</h2><p>采集会保存官网原回答、提问时间、会话地址和截图。实际取得回答后，才计入有效样本。</p></div><a href="/?page=input" class="primary" style="padding:12px 18px;border-radius:8px">去选择问题</a></div></section>
+    <footer>使用 GEO 的独立浏览器资料，不读取你平时 Chrome 的登录数据。首次需要在这个窗口登录一次，后续可复用；平台会话过期时需要重新登录。千问、文心、元宝的自动采集尚未接入。</footer>
+  </main>
+</body>
+</html>
